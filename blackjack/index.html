@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blackjack</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+          <li><a href="#" onclick="switchGame('blackjack')">Blackjack</a></li>
+          <li><a href="#" onclick="switchGame('roulette')">Roulette</a></li>
+          <li><a href="#" onclick="switchGame('slots')">Slots</a></li>
+        </ul>
+      </nav>    
+  <div class="game-container">
+    <h1>Blackjack</h1>
+
+    <div class="hands">
+      <div class="hand">
+        <h2>Dealer</h2>
+        <div id="dealer-cards" class="card-row"></div>
+        <p id="dealer-score" class="score"></p>
+      </div>
+
+      <div class="hand">
+        <h2>You</h2>
+        <div id="player-cards" class="card-row"></div>
+        <p id="player-score" class="score"></p>
+      </div>
+    </div>
+
+    <div id="buttons">
+      <button onclick="hit()">Hit</button>
+      <button onclick="stand()">Stand</button>
+      <button onclick="restartGame()">Restart</button>
+    </div>
+
+    <div class="message" id="message"></div>
+
+    <div class="controls">
+      <label for="volume">🔊 Volume:</label>
+      <input type="range" id="volume" min="0" max="1" step="0.01" value="0.3">
+
+      <div class="stats">
+        <p>Wins: <span id="wins">0</span></p>
+        <p>Losses: <span id="losses">0</span></p>
+        <button onclick="resetStats()">Reset Stats</button>
+      </div>
+    </div>
+    <footer class="credits">
+        <p>🎲 Blackjack Game by <strong>Eric W</strong>, questions go to <a href="mailto:wangec@vhcsk12.com">wangec@vhcsk12.com</a></p>
+        <p>Made with ❤️ using HTML, CSS, JavaScript, and the Gambler's Dream</p>
+
+      </footer>
+  </div>
+
+  <audio id="deal-sound" src="deal.mp3" preload="auto"></audio>
+  <script src="script.js"></script>
+ 
+</body>
+
+</html>
