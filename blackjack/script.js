@@ -160,30 +160,3 @@ function playSound() {
 
 startGame();
 
-
-function switchGame(game) {
-    // Hide all games first
-    document.querySelectorAll('.game-container, .roulette-container, .slots-container').forEach(el => {
-      el.style.display = 'none';
-    });
-  
-    // Show the selected game container
-    if (game === 'blackjack') {
-      document.querySelector('.game-container').style.display = 'block';
-    } else if (game === 'roulette') {
-      document.querySelector('.roulette-container').style.display = 'block';
-    } else if (game === 'slots') {
-      document.querySelector('.slots-container').style.display = 'block';
-    }
-  
-    // Update active nav link styling
-    document.querySelectorAll('.navbar a').forEach(link => {
-      link.classList.toggle('active', link.textContent.toLowerCase() === game);
-    });
-  }
-  
-  // Initialize page to show Blackjack by default
-  window.onload = () => {
-    switchGame('blackjack');
-  };
-  

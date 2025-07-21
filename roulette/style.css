@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1b1b1b;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 25px; /* Add this line */
+}
+  
+  .navbar {
+    background-color: #1b1b1b;
+    padding: 15px 0;
+    width: 100%;
+  }
+  
+  .navbar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+  }
+  
+  .navbar ul li a {
+    color: #ccc;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .navbar ul li a:hover,
+  .navbar ul li a.active {
+    background-color: #28a745;
+    color: white;
+  }  
+  
+  .game-container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #2d2d2d;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px auto; 
+    padding: 25px;   
+    
+  }
+  
+  label, select, button {
+    margin: 10px 5px;
+    padding: 10px 15px;
+    font-size: 1em;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    background-color: #28a745;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.2s;
+  }
+  
+  select:hover,
+  button:hover {
+    background-color: #218838;
+  }
+  
+  #roulette-result {
+    margin-top: 20px;
+    font-size: 1.3em;
+    font-weight: bold;
+  }
+  
+  .stats {
+    margin-top: 20px;
+  }
+  
+  .stats p {
+    margin: 5px 0;
+  }
+  
+  footer.credits {
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #444;
+    font-size: 0.9rem;
+    color: #ccc;
+    text-align: center;
+    width: 100%;
+  }
+  
+  footer.credits a {
+    color: #6cf;
+    text-decoration: none;
+  }
+  
+  footer.credits a:hover {
+    text-decoration: underline;
+  }
+  
