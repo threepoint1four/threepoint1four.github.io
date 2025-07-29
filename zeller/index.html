@@ -2,13 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zeller's Practice</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
     <h1>Zeller's Congruence Practice</h1>
+
+    <div class="range-inputs">
+      <label for="min-year">Min Year:</label>
+      <input type="number" id="min-year" value="1600" />
+      <label for="max-year">Max Year:</label>
+      <input type="number" id="max-year" value="2100" />
+      <button onclick="generateNewDate()">Start</button>
+    </div>
+
     <p id="date-display">Loading...</p>
 
     <div id="choices" class="buttons"></div>
@@ -18,6 +27,7 @@
 
     <footer class="credits">
       <p>🗓️ Built by <strong>Eric W</strong> | Learn Zeller. Rule the calendar.</p>
+      <p>Email: <a href="mailto:wangec@vhcsk12.com">wangec@vhcsk12.com</a></p>
     </footer>
   </div>
 

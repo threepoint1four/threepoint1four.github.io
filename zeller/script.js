@@ -1,5 +1,4 @@
 const weekdayNames = ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
-
 let currentDate = null;
 
 function zeller(day, month, year) {
@@ -13,15 +12,26 @@ function zeller(day, month, year) {
   const k = year % 100;
   const j = Math.floor(year / 100);
 
-  const h = (q + Math.floor((13 * (m + 1)) / 5) + k + Math.floor(k / 4) + Math.floor(j / 4) + (5 * j)) % 7;
+  const h = (q + Math.floor((13 * (m + 1)) / 5) + k + Math.floor(k / 4)
+             + Math.floor(j / 4) + (5 * j)) % 7;
+
   return h;
 }
 
 function getRandomDate() {
-  const year = Math.floor(Math.random() * 2024) + 1; // Years 1 to 2024
+  const minYear = parseInt(document.getElementById("min-year").value);
+  const maxYear = parseInt(document.getElementById("max-year").value);
+
+  if (isNaN(minYear) || isNaN(maxYear) || minYear > maxYear) {
+    alert("Please enter a valid year range.");
+    return { day: 1, month: 1, year: 2000 }; // fallback
+  }
+
+  const year = Math.floor(Math.random() * (maxYear - minYear + 1)) + minYear;
   const month = Math.floor(Math.random() * 12) + 1;
   const maxDays = new Date(year, month, 0).getDate();
   const day = Math.floor(Math.random() * maxDays) + 1;
+
   return { day, month, year };
 }
 
@@ -33,7 +43,8 @@ function generateNewDate() {
   document.getElementById("result").textContent = "";
   currentDate = getRandomDate();
 
-  document.getElementById("date-display").textContent = `What day of the week is ${displayDate(currentDate)}?`;
+  document.getElementById("date-display").textContent =
+    `What day of the week is ${displayDate(currentDate)}?`;
 
   const choicesDiv = document.getElementById("choices");
   choicesDiv.innerHTML = "";
@@ -58,5 +69,3 @@ function checkAnswer(index) {
     resultText.style.color = "salmon";
   }
 }
-
-generateNewDate();
