@@ -54,8 +54,8 @@ main { flex: 1; }
 .home-row > span { min-width: 0; }
 .home-row strong, .home-entry strong { display: block; font-weight: 560; }
 .home-row small, .home-entry small { display: block; margin-top: 4px; color: var(--muted); font-size: 12.5px; line-height: 1.45; }
-.home-entry { display: block; }
-.home-row time { flex: none; color: var(--soft); font: 11px/1.5 var(--mono); white-space: nowrap; }
+.home-row time, .home-entry time { flex: none; color: var(--soft); font: 11px/1.5 var(--mono); white-space: nowrap; }
+.home-entry-dates { flex: none; color: var(--soft); font: 11px/1.5 var(--mono); white-space: nowrap; }
 .home-row:hover strong, .home-row:hover .home-writing-title { text-decoration: underline; text-underline-offset: 4px; }
 .home-links { display: flex; gap: 10px; margin: 0; color: var(--soft); font: 12px/1.5 var(--mono); }
 .home-links a { color: var(--muted); text-decoration: none; }
