@@ -1,7 +1,7 @@
 ---
 title: How many pairwise coprime composites?
-description: A small extremal number theory problem from Putnam and Beyond.
-date: 2026-10-23
+description: Interesting number theory puzzle
+date: 2026-10-22
 tags: [math, number-theory]
 math: true
 ---
