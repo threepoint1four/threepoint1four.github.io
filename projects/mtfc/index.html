@@ -8,19 +8,33 @@ section: projects
   <a class="back-link" href="{{ '/projects/' | relative_url }}">← Projects</a>
   <header class="post-header">
     <h1>Modeling the Future Challenge</h1>
-    <p class="post-deck">Wheat-price modeling with production, inflation, climate, and energy data.</p>
+    <p class="post-deck">Wheat-price modeling with production, CPI, climate, oil, and use data.</p>
     <p class="post-meta">Lead programmer · National finalist · 64/72 in the final round</p>
   </header>
   <div class="prose">
-    <p>I led the programming for our Modeling the Future Challenge entry, which reached the national finals.</p>
+    <p>As lead programmer, I built the data exploration and wheat-price modeling notebook for our team's entry.</p>
 
-    <h2>Modeling work</h2>
-    <p>In my main notebook, I worked with annual wheat data from 2000–2024. I checked the data for missing values and explored how average price related to production quantity, CPI, climate anomaly, oil price, and wheat use. Scatterplots and a correlation heatmap helped me inspect those relationships before modeling them.</p>
+    <h2>What I built</h2>
+    <p>My main notebook uses 25 annual wheat observations from 2000 through 2024. I checked for missing values, plotted price against each input, and made a correlation heatmap before fitting a model. The inputs were year, production quantity, CPI, climate anomaly, oil price, and wheat use.</p>
+    <p>I split the observations into training and test sets, then fit a multivariable linear regression for average wheat price. The notebook reports a training-set R² of 0.839; it does not report a held-out test score, so I treat the later estimates as exploratory.</p>
+    <pre><code>features = ["Year", "Quantity", "CPI", "Anomaly", "OilPrice", "Use"]
+X = df[features]
+y = df["AvgPrice"]
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
+model = LinearRegression().fit(X_train, y_train)</code></pre>
 
-    <p>I fit a multivariable linear regression to estimate average wheat price. I then projected several inputs from their historical trends, added oil-price assumptions, and passed them through the model. The notebook ends with exploratory price projections for 2025 and 2026.</p>
+    <h2>From inputs to a scenario</h2>
+    <p>I projected production, CPI, climate anomaly, and wheat use from their historical trends, then combined those estimates with oil-price assumptions for 2025 and 2026. Feeding those values into the price model produced the notebook's two example outputs:</p>
+    <div class="project-projections" aria-label="Exploratory model outputs for average wheat price">
+      <span><small>2025</small><strong>237.1</strong></span>
+      <span><small>2026</small><strong>226.4</strong></span>
+    </div>
+    <p class="project-note">Average price values as reported in the notebook. These are model scenarios, not observed prices.</p>
 
-    <h2>Supporting analysis</h2>
-    <p>I also wrote Python scripts that combined country-level wheat producer-price, production, import, and export data for comparison. A separate experiment explored seasonal price forecasting for Egypt.</p>
+    <h2>Other analyses</h2>
+    <p>I also wrote scripts to join country-level producer-price, production, import, and export data and compare their relationships. Another experiment used a seasonal time-series model to explore wheat producer prices in Egypt.</p>
 
     <p><a href="https://colab.research.google.com/drive/1BHZZrazzAx-TTVp-65kKjj8oGfJJKHzT?usp=sharing">View my modeling notebook ↗</a><br><a href="https://www.mtfchallenge.org/">About the challenge ↗</a></p>
   </div>

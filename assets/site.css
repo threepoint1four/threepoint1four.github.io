@@ -44,6 +44,8 @@ main { flex: 1; }
 .home-site-header h1.site-mark:hover { text-decoration: none; }
 .home { padding: 30px 0 65px; }
 .home-bio { margin: 0 0 60px; color: var(--muted); font-size: 15px; line-height: 1.6; }
+.home-bio p { margin: 0 0 10px; }
+.home-bio p:last-child { margin-bottom: 0; color: var(--soft); font-size: 13px; }
 .home-section { margin-bottom: 60px; }
 .home-section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 19px; }
 .home-section-heading h2 { margin: 0; font-size: 19px; font-weight: 650; letter-spacing: -.025em; }
@@ -108,6 +110,20 @@ main { flex: 1; }
 .project-figure { margin: 32px 0; }
 .project-figure img { display: block; width: 100%; height: auto; border: 1px solid var(--line); background: #000; }
 .project-figure figcaption { margin-top: 9px; color: var(--soft); font: 11px/1.6 var(--mono); }
+.project-figure figcaption strong { color: var(--muted); font-weight: 600; }
+.project-figure a { display: block; }
+.project-figure a:hover img { border-color: var(--muted); }
+.fractal-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 18px; margin: 34px 0 44px; }
+.fractal-gallery .project-figure { min-width: 0; margin: 0; }
+.fractal-gallery img { width: 100%; aspect-ratio: 1; object-fit: contain; }
+.project-equation { text-align: center; }
+.project-methods { padding-left: 21px; }
+.project-methods li { margin-bottom: .7em; }
+.project-projections { display: flex; gap: 42px; margin: 5px 0 12px; }
+.project-projections span { display: flex; align-items: baseline; gap: 10px; }
+.project-projections small { color: var(--soft); font: 11px/1.5 var(--mono); }
+.project-projections strong { color: var(--text); font: 600 22px/1.2 var(--sans); }
+.prose .project-note { color: var(--soft); font-size: 13px; line-height: 1.6; }
 
 @media (max-width: 520px) {
   .site-shell { width: min(100% - 32px, 680px); }
@@ -122,4 +138,5 @@ main { flex: 1; }
   .home-bio { margin-bottom: 48px; }
   .home-section { margin-bottom: 48px; }
   .home-row, .home-entry { gap: 10px; }
+  .fractal-gallery { gap: 20px 12px; }
 }

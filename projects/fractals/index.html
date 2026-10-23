@@ -3,24 +3,47 @@ layout: default
 title: Fractal studies
 description: Mandelbrot and Julia set images generated with Python.
 section: projects
+math: true
 ---
 <article class="post project-detail">
   <a class="back-link" href="{{ '/projects/' | relative_url }}">← Projects</a>
   <header class="post-header">
     <h1>Fractal studies</h1>
-    <p class="post-deck">Mandelbrot and Julia set images generated with Python.</p>
+    <p class="post-deck">A few Mandelbrot and Julia sets generated with Python.</p>
     <p class="post-meta">Python · NumPy · Matplotlib</p>
   </header>
   <div class="prose">
-    <p>These experiments use repeated complex-number calculations to produce fractal images. Small changes to the parameters can make very different shapes.</p>
-    <figure class="project-figure">
-      <img src="{{ '/assets/projects/art/mandelbrot.png' | relative_url }}" alt="Mandelbrot set in white and red against a near-black background" width="900" height="900" loading="lazy">
-      <figcaption>Mandelbrot set.</figcaption>
-    </figure>
-    <figure class="project-figure">
-      <img src="{{ '/assets/projects/art/julia.png' | relative_url }}" alt="Branching blue Julia set on a black background" width="3024" height="1962" loading="lazy">
-      <figcaption>Julia set for c = −0.54 + 0.54i.</figcaption>
-    </figure>
+    <p>Each pixel begins a sequence of complex numbers. I color it by how long the sequence stays within an escape radius. These are a few results I kept from changing the starting points, constants, and colors. Select an image to see it at full size.</p>
+
+    <div class="fractal-gallery" aria-label="Selected fractal images">
+      <figure class="project-figure">
+        <a href="{{ '/assets/projects/art/mandelbrot.png' | relative_url }}" target="_blank" rel="noopener" aria-label="Open Mandelbrot set image at full size"><img src="{{ '/assets/projects/art/mandelbrot.png' | relative_url }}" alt="White Mandelbrot set with a red edge on a dark background" width="900" height="900" loading="lazy"></a>
+        <figcaption><strong>Mandelbrot set.</strong> Each point supplies a different value of <i>c</i>.</figcaption>
+      </figure>
+      <figure class="project-figure">
+        <a href="{{ '/assets/projects/art/julia.png' | relative_url }}" target="_blank" rel="noopener" aria-label="Open Julia set for c equals minus 0.54 plus 0.54i at full size"><img src="{{ '/assets/projects/art/julia.png' | relative_url }}" alt="Blue branching Julia set with curling arms on black" width="3024" height="1962" loading="lazy"></a>
+        <figcaption><strong>Julia set.</strong> <i>c</i> = −0.54 + 0.54<i>i</i></figcaption>
+      </figure>
+      <figure class="project-figure">
+        <a href="{{ '/assets/projects/art/julia-c-0.79-plus-0.15i.png' | relative_url }}" target="_blank" rel="noopener" aria-label="Open Julia set for c equals minus 0.79 plus 0.15i at full size"><img src="{{ '/assets/projects/art/julia-c-0.79-plus-0.15i.png' | relative_url }}" alt="Bright blue connected Julia set surrounded by dark blue bands" width="900" height="900" loading="lazy"></a>
+        <figcaption><strong>Julia set.</strong> <i>c</i> = −0.79 + 0.15<i>i</i></figcaption>
+      </figure>
+      <figure class="project-figure">
+        <a href="{{ '/assets/projects/art/julia-c-0.3-minus-0.01i.png' | relative_url }}" target="_blank" rel="noopener" aria-label="Open Julia set for c equals 0.3 minus 0.01i at full size"><img src="{{ '/assets/projects/art/julia-c-0.3-minus-0.01i.png' | relative_url }}" alt="Rounded blue Julia set with bulb-like details against black" width="900" height="900" loading="lazy"></a>
+        <figcaption><strong>Julia set.</strong> <i>c</i> = 0.3 − 0.01<i>i</i></figcaption>
+      </figure>
+    </div>
+
+    <h2>The rule behind them</h2>
+    <p>Both images come from repeating the same operation:</p>
+    <p class="project-equation">\[z_{n+1}=z_n^2+c.\]</p>
+    <p>For the Mandelbrot set, I start at \(z_0=0\) and let each pixel choose \(c\). For a Julia set, I hold \(c\) fixed and let each pixel choose \(z_0\). A small change in \(c\) can change the whole picture.</p>
+    <p>For the Mandelbrot set, the core of the Python generator is an escape-time loop:</p>
+    <pre><code>for step in range(num_iter):
+    active = np.abs(z) &lt; radius
+    z[active] = z[active] ** 2 + c[active]
+    escape_time[active] += 1</code></pre>
+    <p>Points that stay within the radius longer receive a different color.</p>
     <p><a href="https://github.com/threepoint1four/art">View source and more images on GitHub ↗</a></p>
   </div>
 </article>
