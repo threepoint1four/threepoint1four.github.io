@@ -82,7 +82,7 @@ main { flex: 1; }
 .back-link { color: var(--muted); font: 12px/1.4 var(--mono); text-decoration: none; }
 .back-link:hover { color: var(--text); text-decoration: underline; text-underline-offset: 4px; }
 .post-header { padding: 37px 0 25px; }
-.post-header h1 { margin-bottom: 12px; font-size: clamp(34px, 5vw, 46px); font-weight: 650; letter-spacing: -.055em; line-height: 1.18; }
+.post-header h1 { margin-bottom: 12px; font-size: clamp(30px, 4.5vw, 38px); font-weight: 650; letter-spacing: -.045em; line-height: 1.18; }
 .post-deck { margin-bottom: 14px; color: var(--muted); font-size: 16px; line-height: 1.6; }
 .post-meta { margin: 0; color: var(--soft); font: 11px/1.5 var(--mono); }
 
