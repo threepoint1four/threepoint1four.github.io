@@ -1,0 +1,25 @@
+---
+layout: default
+title: Boosting for imbalanced data
+description: Research with the University of Alabama Institute of Data and Analytics.
+section: projects
+---
+<article class="post project-detail">
+  <a class="back-link" href="{{ '/projects/' | relative_url }}">← Projects</a>
+  <header class="post-header">
+    <h1>Boosting for imbalanced data</h1>
+    <p class="post-deck">Research with the University of Alabama Institute of Data and Analytics.</p>
+    <p class="post-meta">Machine learning · ICDM Workshops 2025</p>
+  </header>
+  <div class="prose">
+    <p>I coauthored <em>Dimension Reduction Enhanced Boosting for Imbalanced Data Classification</em> with Jason Parton. The paper addresses two common problems in classification: too many input features, and a minority class that a model can easily overlook.</p>
+
+    <p><strong>My role:</strong> I worked on programming and data analysis, including the application to county-level opioid mortality data. I also helped write the paper and presented the work at IEEE ICDM Workshops 2025.</p>
+
+    <p>Our approach uses a gradient boosting model to estimate class probabilities, then applies sufficient dimension reduction to extract a smaller set of informative features. Those features feed back into boosting. The method also gives more weight to uncertain cases near the decision boundary, and the reduced feature space makes visualization and outlier inspection possible.</p>
+
+    <p>We tested it on a county-level task: identifying counties in the highest quartile of opioid-related death counts. The paper trains on 2016 data and tests on 2017 data. On the test set, the method reached 90% accuracy and 86% sensitivity. A kernel SVM reached 93% accuracy and 82% sensitivity; their ROC AUC values were 0.96 and 0.97, respectively.</p>
+
+    <p><a href="https://ieeexplore.ieee.org/document/11415449">Read the paper on IEEE Xplore ↗</a><br><small>Eric C. Wang and Jason Parton · DOI: 10.1109/ICDMW69685.2025.00371</small></p>
+  </div>
+</article>

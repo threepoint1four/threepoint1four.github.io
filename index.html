@@ -1,0 +1,52 @@
+---
+layout: default
+home: true
+description: Eric Wang studies Statistics & Data Science and Mathematics at Yale.
+---
+<div class="home">
+  <p class="home-bio">I study Statistics &amp; Data Science and Mathematics at Yale.</p>
+
+  <section class="home-section" aria-labelledby="home-writing">
+    <div class="home-section-heading">
+      <h2 id="home-writing">Writing</h2>
+      <a href="{{ '/notes/' | relative_url }}">All writing <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="home-list">
+      {% for post in site.posts limit: 3 %}
+      <a class="home-row" href="{{ post.url | relative_url }}">
+        <span class="home-writing-title">{{ post.title | escape }}</span>
+        <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%b %-d, %Y' }}</time>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="home-section" aria-labelledby="home-work">
+    <div class="home-section-heading">
+      <h2 id="home-work">Selected work</h2>
+      <a href="{{ '/projects/' | relative_url }}">All projects <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="home-list">
+      <a class="home-row" href="{{ '/projects/boosting-research/' | relative_url }}">
+        <span><strong>Dimension reduction for imbalanced data</strong><small>Research at UA's Institute of Data and Analytics; IEEE ICDMW 2025.</small></span>
+      </a>
+      <a class="home-row" href="{{ '/projects/trips/' | relative_url }}">
+        <span><strong>Trips</strong><small>Poker hand evaluation and equity calculations.</small></span>
+      </a>
+      <a class="home-row" href="{{ '/projects/fractals/' | relative_url }}">
+        <span><strong>Fractal studies</strong><small>Mandelbrot and Julia sets made with Python.</small></span>
+      </a>
+    </div>
+  </section>
+
+  <section class="home-section" aria-labelledby="home-experience">
+    <div class="home-section-heading">
+      <h2 id="home-experience">Experience</h2>
+    </div>
+    <div class="home-list">
+      <div class="home-entry"><strong>LIVE by Po-Shen Loh</strong><small>Taught contest math, 2023–26.</small></div>
+    </div>
+  </section>
+
+  <p class="home-links"><a href="mailto:eric.c.wang@yale.edu">Email</a><span aria-hidden="true">·</span><a href="https://github.com/threepoint1four" rel="me">GitHub</a></p>
+</div>

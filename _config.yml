@@ -1,0 +1,21 @@
+title: Eric Wang — Field Notes
+description: Notes on math, competitive programming, research, machine learning, and other interests.
+url: https://threepoint1four.github.io
+baseurl: ""
+permalink: /notes/:title/
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  math_engine: mathjax
+exclude:
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post

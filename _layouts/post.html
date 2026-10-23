@@ -1,0 +1,12 @@
+---
+layout: default
+---
+<article class="post">
+  <a class="back-link" href="{{ '/notes/' | relative_url }}">← Writing</a>
+  <header class="post-header">
+    <h1>{{ page.title | escape }}</h1>
+    {% if page.description %}<p class="post-deck">{{ page.description | escape }}</p>{% endif %}
+    <p class="post-meta"><time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%b %-d, %Y' }}</time>{% for tag in page.tags %}<span aria-hidden="true"> · </span>{{ tag | replace: '-', ' ' | escape }}{% endfor %}</p>
+  </header>
+  <div class="prose">{{ content }}</div>
+</article>
