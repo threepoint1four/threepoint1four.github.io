@@ -24,6 +24,7 @@ h1, h2, p { margin-top: 0; }
   display: flex;
   flex-direction: column;
 }
+.home-site-shell { min-height: 0; }
 
 .site-header {
   min-height: 70px;
@@ -43,6 +44,7 @@ main { flex: 1; }
 
 .home-site-header h1.site-mark:hover { text-decoration: none; }
 .home { padding: 30px 0 65px; }
+.home-site-shell .home { padding-bottom: 0; }
 .home-bio { margin: 0 0 60px; color: var(--muted); font-size: 15px; line-height: 1.6; }
 .home-bio p { margin: 0 0 10px; }
 .home-bio p:last-child { margin-bottom: 0; color: var(--soft); font-size: 13px; }
@@ -79,6 +81,7 @@ main { flex: 1; }
 .page-list { display: grid; gap: 17px; }
 
 .site-footer { margin-top: 36px; padding: 24px 0 32px; color: var(--soft); font: 11px/1.5 var(--mono); }
+.home-site-shell .site-footer { margin-top: 12px; padding-top: 0; }
 
 .post { padding: 56px 0 80px; }
 .back-link { color: var(--muted); font: 12px/1.4 var(--mono); text-decoration: none; }

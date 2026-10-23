@@ -19,7 +19,7 @@
     {% endif %}
   </head>
   <body>
-    <div class="site-shell">
+    <div class="site-shell{% if page.home %} home-site-shell{% endif %}">
       <header class="site-header{% if page.home %} home-site-header{% endif %}">
         {% if page.home %}<h1 class="site-mark">Eric Wang</h1>{% else %}<a class="site-mark" href="{{ '/' | relative_url }}" aria-label="Eric Wang, home">Eric Wang</a>{% endif %}
         <nav class="site-nav" aria-label="Main navigation">
