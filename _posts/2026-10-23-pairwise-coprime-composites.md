@@ -1,6 +1,6 @@
 ---
-title: How many pairwise coprime composites?
-description: Interesting number theory puzzle
+title: Pairwise coprime composites below 2005
+description: A prime-divisor count gives the sharp threshold of 15.
 date: 2026-10-22
 tags: [math, number-theory]
 math: true

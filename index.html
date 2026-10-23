@@ -1,12 +1,12 @@
 ---
 layout: default
 home: true
-description: Eric Wang studies Statistics & Data Science and Mathematics at Yale, with interests in mathematical statistics and applied machine learning.
+description: Eric Wang studies Statistics & Data Science and Mathematics at Yale, with interests in mathematical statistics and applications of machine learning.
 ---
 <div class="home">
   <div class="home-bio">
-    <p>I study Statistics &amp; Data Science and Mathematics at Yale. I'm interested in mathematical statistics and applications of machine learning.</p>
-    <p>Outside of that, I like contest math, competitive programming, poker, and making fractal art.</p>
+    <p>Currently studying Statistics &amp; Data Science and Mathematics at Yale. I'm broadly interested in mathematical statistics and applications of machine learning.</p>
+    <p>I also enjoy competitive programming, poker, chess, and running.</p>
   </div>
 
   <section class="home-section" aria-labelledby="home-writing">
@@ -18,7 +18,7 @@ description: Eric Wang studies Statistics & Data Science and Mathematics at Yale
       {% for post in site.posts limit: 3 %}
       <a class="home-row" href="{{ post.url | relative_url }}">
         <span class="home-writing-title">{{ post.title | escape }}</span>
-        <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%b %-d, %Y' }}</time>
+        <time class="home-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%Y' }}</time>
       </a>
       {% endfor %}
     </div>
