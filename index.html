@@ -18,7 +18,7 @@ description: Eric Wang studies Statistics & Data Science and Mathematics at Yale
       {% for post in site.posts limit: 3 %}
       <a class="home-row" href="{{ post.url | relative_url }}">
         <span class="home-writing-title">{{ post.title | escape }}</span>
-        <time class="home-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%Y' }}</time>
+        <time class="home-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%b %Y' }}</time>
       </a>
       {% endfor %}
     </div>
@@ -31,11 +31,11 @@ description: Eric Wang studies Statistics & Data Science and Mathematics at Yale
     <div class="home-list">
       <div class="home-entry">
         <span><strong>Research Assistant · University of Alabama</strong><small>At the Institute of Data and Analytics, worked with Dr. Jason Parton on dimension reduction for imbalanced data and opioid mortality.</small></span>
-        <span class="home-date"><time datetime="2024">2024</time>–<time datetime="2025">2025</time></span>
+        <span class="home-date"><time datetime="2024-06">Jun 2024</time>–<time datetime="2025-08">Aug 2025</time></span>
       </div>
       <div class="home-entry">
         <span><strong>LIVE by Po-Shen Loh</strong><small>Selected to teach contest math for Po-Shen Loh; trained in pedagogy and improv comedy.</small></span>
-        <span class="home-date"><time datetime="2023">2023</time>–<time datetime="2026">2026</time></span>
+        <span class="home-date"><time datetime="2023-08">Aug 2023</time>–<time datetime="2026-08">Aug 2026</time></span>
       </div>
     </div>
   </section>
@@ -48,15 +48,15 @@ description: Eric Wang studies Statistics & Data Science and Mathematics at Yale
     <div class="home-list">
       <a class="home-row" href="{{ '/projects/boosting-research/' | relative_url }}">
         <span><strong>Dimension reduction for imbalanced data</strong><small>Research at UA's Institute of Data and Analytics; IEEE ICDMW 2025.</small></span>
-        <time class="home-date" datetime="2025">2025</time>
+        <time class="home-date" datetime="2025-11">Nov 2025</time>
       </a>
       <a class="home-row" href="{{ '/projects/trips/' | relative_url }}">
         <span><strong>Trips</strong><small>Poker hand evaluation and equity calculations.</small></span>
-        <time class="home-date" datetime="2026">2026</time>
+        <time class="home-date" datetime="2026-07">Jul 2026</time>
       </a>
       <a class="home-row" href="{{ '/projects/fractals/' | relative_url }}">
         <span><strong>Fractal studies</strong><small>Mandelbrot and Julia sets made with Python.</small></span>
-        <time class="home-date" datetime="2026">2026</time>
+        <time class="home-date" datetime="2026-08">Aug 2026</time>
       </a>
     </div>
   </section>
